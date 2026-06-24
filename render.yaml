@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: crypto-price-alert-bot
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_ID
+        sync: false
+      - key: DATA_DIR
+        value: .
+      - key: CHECK_INTERVAL
+        value: 60
+      - key: COINGECKO_API_KEY
+        sync: false
+      - key: COINGECKO_API
+        value: https://api.coingecko.com/api/v3
